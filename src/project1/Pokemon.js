@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 import { useState, useEffect } from "react";
-import PokemonList from "./project1/PokemonList";
-import "./App.css";
-import axios from "axios";
-import Pagination from "./project1/Pagination";
+import PokemonList from "./PokemonList";
 
-function Pokemon() {
+import axios from "axios";
+import Pagination from "./Pagination";
+
+export default function Pokemon() {
   const [pokemon, setPokemon] = useState([]);
   const [currentPageUrl, setCurrentPageUrl] = useState(
     "https://pokeapi.co/api/v2/pokemon"
@@ -37,6 +37,7 @@ function Pokemon() {
 
   return (
     <>
+
       <PokemonList pokemon={pokemon} />
       <Pagination gotoNextPage={nextPageUrl ? gotoNextPage : null}
        gotoPrevPage={prevPageUrl ? gotoPrevPage: null} />
@@ -44,4 +45,3 @@ function Pokemon() {
   );
 }
 
-export default Pokemon;
